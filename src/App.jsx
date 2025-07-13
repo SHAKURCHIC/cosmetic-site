@@ -103,7 +103,7 @@ const services = [
 // Главная секция — все тексты теперь чёрные!
 function HomeSection({ onServiceClick }) {
     return (
-        <div className="flex flex-col items-center min-h-[70vh] w-full bg-[#cbb491] pb-20 text-black">
+        <div className="min-h-screen flex flex-col items-center justify-center w-full" style={{ backgroundColor: "#f6e9d7" }}>
             {/* HERO */}
             <motion.div
                 initial={{ opacity: 0, y: 60 }}
@@ -130,7 +130,7 @@ function HomeSection({ onServiceClick }) {
                             href="https://n1280394.alteg.io"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="bg-[#243665] hover:bg-[#182040] text-white font-extrabold rounded-2xl px-10 py-5 shadow-2xl text-2xl transition-all duration-200 border-4 border-[#b69e7b]"
+                            className="bg-white hover:bg-[#182040] text-[#243665] font-extrabold rounded-2xl px-10 py-5 shadow-2xl text-2xl transition-all duration-200 border-4 border-[#b69e7b]"
                             style={{ letterSpacing: "1px" }}
                         >
                             Онлайн-запись
@@ -296,7 +296,7 @@ export default function App() {
     pageContent.home = <HomeSection onServiceClick={handleMenuClick} />;
 
     return (
-        <div className="min-h-screen bg-[#cbb491] flex flex-col text-black">
+        <div className="min-h-screen flex flex-col items-center justify-center w-full" style={{ backgroundColor: "#f6e9d7" }}>
             {/* Header */}
             <header className="w-full flex items-center justify-between px-6 md:px-12 py-8 bg-[#ede2cf] bg-opacity-80 shadow-md text-black fixed top-0 left-0 z-20 backdrop-blur border-b border-[#b69e7b]">
                 <div className="text-3xl md:text-4xl font-bold text-[#243665] tracking-tight select-none">
