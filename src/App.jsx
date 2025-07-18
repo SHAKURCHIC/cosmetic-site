@@ -38,7 +38,6 @@ const pageContent = {
             </p>
         </div>
     ),
-    // остальные вкладки...
 };
 
 export default function App() {
@@ -68,7 +67,6 @@ export default function App() {
         setCurrentPage(id);
         setMenuOpen(false);
         setServicesOpen(false);
-        // Прокрутка к footer для "Контакты"
         if (id === "contacts") {
             setTimeout(() => {
                 const footer = document.querySelector("footer");
@@ -76,7 +74,7 @@ export default function App() {
                     footer.scrollIntoView({ behavior: "smooth" });
                 }
             }, 200);
-            setCurrentPage("home"); // всегда на главной
+            setCurrentPage("home");
         }
         if (id === "about") {
             setTimeout(() => {
@@ -85,25 +83,24 @@ export default function App() {
                     gallery.scrollIntoView({ behavior: "smooth" });
                 }
             }, 300);
-            setCurrentPage("home"); // всегда на главной, чтобы HomeSection был
+            setCurrentPage("home");
         }
     };
 
-    // Подключаем страницы
     pageContent.home = <HomeSection onServiceClick={handleMenuClick} />;
     pageContent.services = <ServicesGrid onServiceClick={handleMenuClick} />;
 
     return (
-        <div className="min-h-screen flex flex-col items-center justify-center w-full" style={{ background: "#F8F5F2" }}>
+        <div className="min-h-screen flex flex-col w-full bg-[#F8F5F2]">
             {/* Header */}
-            <header className="w-full flex items-center justify-between px-6 md:px-12 py-8 bg-[#EDE2CF] bg-opacity-80 shadow-md text-[#181818] fixed top-0 left-0 z-20 backdrop-blur border-b border-[#B69E7B]">
-                {/* Логотип слева */}
-                <div className="text-3xl md:text-4xl font-bold text-[#B69E7B] tracking-tight select-none">
-                    <img src={logo} alt="Логотип" className="h-10 md:h-12" />
+            <header className="w-full flex items-center justify-between px-3 sm:px-6 md:px-12 py-5 sm:py-8 bg-[#EDE2CF] bg-opacity-80 shadow-md text-[#181818] fixed top-0 left-0 z-20 backdrop-blur border-b border-[#B69E7B]">
+                {/* Логотип */}
+                <div className="flex items-center gap-2">
+                    <img src={logo} alt="Логотип" className="h-8 sm:h-10 md:h-12" />
                 </div>
 
-                {/* Блок справа: Главная + бургер-меню */}
-                <div className="flex items-center gap-3">
+                {/* Меню */}
+                <div className="flex items-center gap-2 sm:gap-3">
                     <button
                         onClick={() => {
                             setCurrentPage("home");
@@ -111,33 +108,35 @@ export default function App() {
                             setServicesOpen(false);
                             window.scrollTo({ top: 0, behavior: "smooth" });
                         }}
-                        className="text-lg font-bold text-[#B69E7B] hover:text-[#181818] rounded-xl px-6 py-2 bg-[#FFF] border border-[#B69E7B] shadow transition-all mr-1"
-                        style={{ minWidth: 110 }}
+                        className="hidden xs:inline-block text-base sm:text-lg font-bold text-[#B69E7B] hover:text-[#181818] rounded-xl px-4 sm:px-6 py-2 bg-[#FFF] border border-[#B69E7B] shadow transition-all"
+                        style={{ minWidth: 95 }}
                     >
                         Главная
                     </button>
-                    {/* Burger button */}
+
+                    {/* Burger */}
                     <div className="relative">
                         <button
-                            className="flex flex-col justify-center items-center w-12 h-12 bg-[#B69E7B] rounded-full shadow transition hover:bg-[#D6B274]"
+                            className="flex flex-col justify-center items-center w-10 h-10 sm:w-12 sm:h-12 bg-[#B69E7B] rounded-full shadow transition hover:bg-[#D6B274]"
                             onClick={() => setMenuOpen((open) => !open)}
                             aria-label="Открыть меню"
                         >
-                            <span className="block h-1 w-8 bg-[#FFF] mb-1 rounded"></span>
-                            <span className="block h-1 w-8 bg-[#FFF] mb-1 rounded"></span>
-                            <span className="block h-1 w-8 bg-[#FFF] rounded"></span>
+                            <span className="block h-1 w-6 sm:w-8 bg-[#FFF] mb-1 rounded"></span>
+                            <span className="block h-1 w-6 sm:w-8 bg-[#FFF] mb-1 rounded"></span>
+                            <span className="block h-1 w-6 sm:w-8 bg-[#FFF] rounded"></span>
                         </button>
+
                         {menuOpen && (
                             <div
                                 ref={menuRef}
-                                className="absolute right-0 mt-3 w-64 bg-[#EDE2CF] border border-[#B69E7B] rounded-xl shadow-2xl py-3 z-50"
+                                className="absolute right-0 mt-3 w-56 sm:w-64 bg-[#EDE2CF] border border-[#B69E7B] rounded-xl shadow-2xl py-3 z-50"
                             >
                                 {menuItems.map((item) =>
                                     item.sub ? (
                                         <div key={item.id} className="mb-1">
                                             <button
                                                 onClick={() => setServicesOpen((open) => !open)}
-                                                className="text-lg px-6 py-3 w-full text-left text-[#B69E7B] hover:bg-[#F8F5F2] rounded flex justify-between items-center"
+                                                className="text-base sm:text-lg px-6 py-3 w-full text-left text-[#B69E7B] hover:bg-[#F8F5F2] rounded flex justify-between items-center"
                                             >
                                                 {item.label}
                                                 <span className="ml-2">{servicesOpen ? "▲" : "▼"}</span>
@@ -148,7 +147,7 @@ export default function App() {
                                                         <button
                                                             key={subItem.id}
                                                             onClick={() => handleMenuClick(subItem.id)}
-                                                            className="block text-base px-6 py-2 text-left text-[#B69E7B] hover:bg-[#F8F5F2] rounded"
+                                                            className="block text-sm sm:text-base px-6 py-2 text-left text-[#B69E7B] hover:bg-[#F8F5F2] rounded"
                                                         >
                                                             {subItem.label}
                                                         </button>
@@ -160,7 +159,7 @@ export default function App() {
                                         <button
                                             key={item.id}
                                             onClick={() => handleMenuClick(item.id)}
-                                            className={`text-lg px-6 py-3 w-full text-left rounded transition ${
+                                            className={`text-base sm:text-lg px-6 py-3 w-full text-left rounded transition ${
                                                 currentPage === item.id
                                                     ? "bg-[#B69E7B] text-white font-semibold"
                                                     : "text-[#B69E7B] hover:bg-[#F8F5F2]"
@@ -176,13 +175,12 @@ export default function App() {
                 </div>
             </header>
 
-            {/* Main Content */}
-            <main
-                className="flex-1 pt-[104px] pb-8 flex flex-col"
-                style={{ minHeight: "calc(100vh - 104px)" }}
-            >
-                <section className="w-full h-full flex-1 flex items-center justify-center">
-                    <div className="w-full h-full px-0 md:px-8">{pageContent[currentPage]}</div>
+            {/* Main */}
+            <main className="flex-1 pt-[70px] sm:pt-[104px] pb-8 flex flex-col">
+                <section className="w-full flex-1 flex items-start justify-center">
+                    <div className="w-full max-w-screen-xl px-4 sm:px-6 md:px-8">
+                        {pageContent[currentPage]}
+                    </div>
                 </section>
             </main>
         </div>
