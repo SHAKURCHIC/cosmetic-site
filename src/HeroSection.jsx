@@ -25,7 +25,7 @@ export default function HeroSection() {
     };
 
     return (
-        <section className="relative min-h-[680px] flex items-center justify-center bg-black overflow-hidden">
+        <section className="relative min-h-[480px] md:min-h-[680px] flex items-center justify-center bg-black overflow-hidden">
             {/* Фоновое видео */}
             <video
                 className="absolute inset-0 w-full h-full object-cover"
@@ -34,28 +34,27 @@ export default function HeroSection() {
                 loop
                 muted
                 playsInline
-
             ></video>
             {/* Затемнение */}
             <div className="absolute inset-0 bg-black/50"></div>
             {/* Контент поверх */}
-            <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-6 pt-24 pb-10 md:pt-32">
+            <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-2 sm:px-6 pt-20 md:pt-32 pb-8 md:pb-10 gap-8 md:gap-10">
                 {/* Левый текст */}
-                <div className="flex-1 flex flex-col justify-center items-start text-white">
-                    <h1 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight drop-shadow-lg">
+                <div className="flex-1 flex flex-col justify-center items-start text-white max-w-xl">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6 leading-tight drop-shadow-lg">
                         TSEKH BEAUTY<br />
                         Премиальный аппаратный<br />
                         и эстетический уход
                     </h1>
-                    <p className="text-lg md:text-xl font-medium mb-8 drop-shadow-lg">
+                    <p className="text-base sm:text-lg md:text-xl font-medium mb-8 drop-shadow-lg">
                         Почувствуйте красоту и заботу.<br />
                         Экспресс-услуги, уют и качество в каждом визите.
                     </p>
                 </div>
                 {/* Форма справа */}
-                <div className="flex-shrink-0 w-full max-w-sm mt-10 md:mt-0 md:ml-10">
-                    <div className="bg-[#f5f3ef]/90 rounded-2xl shadow-xl px-7 py-8 border border-[#b6a287]">
-                        <h3 className="text-[#181818] text-xl font-bold mb-2">Записаться онлайн</h3>
+                <div className="flex-shrink-0 w-full max-w-xs sm:max-w-sm mt-8 md:mt-0 md:ml-10">
+                    <div className="bg-[#f5f3ef]/90 rounded-2xl shadow-xl px-5 sm:px-7 py-7 border border-[#b6a287]">
+                        <h3 className="text-[#181818] text-lg sm:text-xl font-bold mb-2">Записаться онлайн</h3>
                         <form className="flex flex-col gap-4" onSubmit={handleSubmit} autoComplete="off">
                             <input
                                 type="text"
