@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import video from "./assets/video/main.MP4"
 
 export default function HeroSection() {
     const [name, setName] = useState("");
