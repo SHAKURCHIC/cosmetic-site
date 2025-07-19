@@ -39,7 +39,7 @@ export default function ServicesGrid({ onServiceClick }) {
                         backgroundSize: "cover",
                         backgroundPosition: "center",
                     }}
-                    onClick={() => onServiceClick && onServiceClick(card.id)}
+                    onClick={() => onServiceClick && onServiceClick("price", card.id)}
                     tabIndex={0}
                     role="button"
                     aria-label={`Подробнее об услуге ${card.title}`}

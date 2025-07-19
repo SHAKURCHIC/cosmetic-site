@@ -13,13 +13,13 @@ import uhod from "./assets/uhod.png";
 
 export const services = [
     {
-        id: "spa",
-        title: "SPA-процедуры",
+        id: "contour",
+        title: "Контурная пластика",
         description: [
-            "SPA-ритуалы по телу",
-            "Обёртывания",
-            "Пилинги",
-            "Сеансы галассотерапии"
+            "Моделирование овала лица",
+            "Увеличение губ и скул",
+            "Коррекция морщин",
+            "Восстановление объема мягких тканей"
         ],
         image: service1,
     },
@@ -35,7 +35,7 @@ export const services = [
         image: service2,
     },
     {
-        id: "botulinotherapy",
+        id: "botox",
         title: "Ботулинотерапия",
         description: ["Коррекция мимических морщин (ботокс/диспорт/ксеомин)."],
         image: boteno,
@@ -47,7 +47,7 @@ export const services = [
         image: hipergidroz,
     },
     {
-        id: "exosome",
+        id: "exosomes",
         title: "Эксосомальная терапия",
         description: ["Продвинутая регенерация и омоложение кожи."],
         image: ecsosomal,
@@ -71,7 +71,7 @@ export const services = [
         image: pilinger,
     },
     {
-        id: "drip",
+        id: "ivdrips",
         title: "Капельницы",
         description: ["Детокс, витамины, восстановление, антистресс."],
         image: kapelnici,
@@ -83,7 +83,7 @@ export const services = [
         image: natyazkista,
     },
     {
-        id: "care",
+        id: "facecare",
         title: "Уход и чистка лица",
         description: ["Глубокая чистка, экспресс-уход, индивидуальные программы."],
         image: uhod,
