@@ -8,8 +8,9 @@ import GallerySlider from "./GallerySlider";
 import VideoGallery from "./VideoGallery.jsx";
 import CallToActionSoft from "./CallToActionSoft.jsx";
 import WhyUsSection from "./WhyUsSection.jsx";
+import ProblemSelector from "./ProblemSelector.jsx";
 
-export default function HomeSection({ onServiceClick }) {
+export default function HomeSection({ onServiceClick , onProblemSelect}) {
     return (
         <div className="w-full bg-[#F8F5F2]">
             {/* HERO */}
@@ -68,10 +69,13 @@ export default function HomeSection({ onServiceClick }) {
             {/* Почему выбирают нас */}
             <WhyUsSection />
 
-            {/* Услуги */}
+            <ProblemSelector onProblemSelect={onProblemSelect} />
+
+
             <h2 className="mt-16 md:mt-24 mb-8 text-2xl sm:text-3xl md:text-4xl font-bold text-[#B69E7B] text-center">
                 Услуги
             </h2>
+
             <ServicesGrid onServiceClick={onServiceClick} />
 
             {/* Галерея */}

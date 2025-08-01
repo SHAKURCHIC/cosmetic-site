@@ -6,6 +6,7 @@ import ServicesGrid from "./ServicesGrid";
 import PriceListBotuno from "./PriceListBotuno.jsx";
 import insta from "./assets/bi--instagram.svg";
 import wa from "./assets/bi--whatsapp.svg";
+import ProblemDetail from "./ProblemDetail";
 
 const menuItems = [
     { id: "home", label: "Главная" },
@@ -36,10 +37,25 @@ export default function App() {
     const [servicesOpen, setServicesOpen] = useState(false);
     const [currentPage, setCurrentPage] = useState("home");
     const [scrollToId, setScrollToId] = useState(null);
+    const [selectedProblem, setSelectedProblem] = useState(null);
+    const [savedScrollY, setSavedScrollY] = useState(0);
     const menuRef = useRef(null);
 
     const pageContent = {
-        home: <HomeSection onServiceClick={handleMenuClick} />,
+        home: (
+            <HomeSection
+                onProblemSelect={(problem) => {
+                    setSavedScrollY(window.scrollY);
+                    setSelectedProblem(problem);
+
+                    // Прокрутка к началу страницы после выбора проблемы
+                    setTimeout(() => {
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                    }, 50);
+                }}
+                onServiceClick={handleMenuClick}
+            />
+        ),
         services: <ServicesGrid onServiceClick={handleMenuClick} />,
         about: (
             <div className="w-full h-full flex flex-col items-center justify-center text-[#181818]">
@@ -51,9 +67,16 @@ export default function App() {
     };
 
     function handleMenuClick(id, scrollTarget = null) {
+        setSelectedProblem(null);
         setCurrentPage(id);
         setMenuOpen(false);
         setServicesOpen(false);
+
+        if (id === "home") {
+            setTimeout(() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            }, 100);
+        }
 
         if (scrollTarget) {
             setScrollToId(scrollTarget);
@@ -75,6 +98,12 @@ export default function App() {
             setCurrentPage("home");
         }
     }
+
+
+    useEffect(() => {
+        window.handleMenuClick = handleMenuClick;
+    }, []);
+
 
     useEffect(() => {
         if (currentPage === "price" && scrollToId) {
@@ -100,6 +129,14 @@ export default function App() {
         }
         return () => document.removeEventListener("mousedown", handleClickOutside);
     }, [menuOpen]);
+
+    useEffect(() => {
+        if (!selectedProblem) {
+            setTimeout(() => {
+                window.scrollTo({ top: savedScrollY, behavior: "smooth" });
+            }, 100);
+        }
+    }, [selectedProblem]);
 
     return (
         <div className="min-h-screen flex flex-col w-full bg-[#F8F5F2]">
@@ -168,8 +205,16 @@ export default function App() {
             </header>
 
             <main className="flex-1 pt-[90px]">
-                {pageContent[currentPage]}
+                {selectedProblem ? (
+                    <ProblemDetail
+                        problem={selectedProblem}
+                        onBack={() => setSelectedProblem(null)}
+                    />
+                ) : (
+                    pageContent[currentPage]
+                )}
             </main>
+
             <footer className="w-full max-w-5xl mx-auto mt-20 pt-10 border-t border-[#B69E7B] text-[#181818] flex flex-col md:flex-row justify-between gap-6 text-sm sm:text-base px-4 sm:px-6 text-center md:text-left">
                 <div>
                     <div className="flex items-center gap-3 mb-3 justify-center md:justify-start">
@@ -197,22 +242,19 @@ export default function App() {
                         <img src={wa} alt="wa" className="h-6 w-auto shrink-0" /> WhatsApp
                     </a>
                 </div>
-                <div
-                    className="w-full md:w-[320px] h-[180px] sm:h-[200px] rounded-2xl overflow-hidden shadow-lg mt-8 md:mt-0">
+                <div className="w-full md:w-[320px] h-[180px] sm:h-[200px] rounded-2xl overflow-hidden shadow-lg mt-8 md:mt-0">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2926.491438283025!2d74.61871011187921!3d42.820231871033606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x389eb5dea402bd99%3A0xecdb6d5b523eca72!2zMjEsIDPQsSDRg9C7LiDQkNCw0LvRiyDQotC-0LrQvtC80LHQsNC10LLQsCwg0JHQuNGI0LrQtdC6LCDQmtGL0YDQs9GL0LfRgdGC0LDQvQ!5e0!3m2!1sru!2spl!4v1752867066728!5m2!1sru!2spl"
                         width="100%"
                         height="100%"
-                        style={{border: 0}}
+                        style={{ border: 0 }}
                         allowFullScreen=""
                         loading="lazy"
                         referrerPolicy="no-referrer-when-downgrade"
                         title="Карта TSEKH BEAUTY"
                     ></iframe>
-
                 </div>
             </footer>
-
         </div>
     );
 }

@@ -1,4 +1,3 @@
-import React from "react";
 import PriceHero from "./PriceHero";
 import ProcedureBlock from "./ProcedureBlock";
 import botex from "./assets/video/PricePage/Botex.mp4";
@@ -38,6 +37,7 @@ import uhod2 from "./assets/video/PricePage/uhod2.mp4";
 
 
 
+import React, { useEffect } from "react";
 
 
 import CallToActionSoft from "./CallToActionSoft.jsx";
@@ -46,6 +46,17 @@ import insta from "./assets/bi--instagram.svg";
 import wa from "./assets/bi--whatsapp.svg";
 
 export default function PriceListBotuno() {
+
+    useEffect(() => {
+        const hash = window.location.hash?.substring(1);
+        if (hash) {
+            const el = document.getElementById(hash);
+            if (el) {
+                el.scrollIntoView({ behavior: "smooth" });
+            }
+        }
+    }, []);
+
     return (
         <>
 
