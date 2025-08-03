@@ -3,37 +3,81 @@ import ProcedureBlock from "./ProcedureBlock";
 import botex from "./assets/video/PricePage/Botex.mp4";
 import botex2 from "./assets/video/PricePage/botex2.mp4";
 
+import bot1 from "./assets/Slider/bot21.png";
+import bot2 from "./assets/Slider/bot22.png";
+
+
+
 import hypergidr1 from "./assets/video/PricePage/hypergidr1.mp4";
 import hypergidr2 from "./assets/video/PricePage/hypergidr2.mp4";
+
+import hyper1 from "./assets/Slider/hyper1.png";
+import hyper2 from "./assets/Slider/hyper2.png";
+
+
 
 import contour from "./assets/video/PricePage/Contour.mp4";
 import contour2 from "./assets/video/PricePage/contour2.mp4";
 
+import cont1 from "./assets/Slider/cont1.png";
+import cont2 from "./assets/Slider/cont2.png";
+
+
 import aparat from "./assets/video/PricePage/aparat.mp4";
 import aparat2 from "./assets/video/PricePage/aparat2.mp4";
+
+import aparatnaya1 from "./assets/Slider/aparatnaya1.png";
+import aparatnaya2 from "./assets/Slider/aparatnaya2.png";
+
 
 import exo from "./assets/video/PricePage/exo.mp4";
 import exo2 from "./assets/video/PricePage/exo2.mp4";
 
+import ekzos1 from "./assets/Slider/ekzos1.png";
+import ekzos2 from "./assets/Slider/ekzos2.png";
+
+
+
 import collagen from "./assets/video/PricePage/collagen.mp4";
 import collagen2 from "./assets/video/PricePage/collagen2.mp4";
+
+import kolog1 from "./assets/Slider/kolog1.png";
+import kolog2 from "./assets/Slider/kolog2.png";
+
 
 import lipo from "./assets/video/PricePage/lipo.mp4";
 import lipo2 from "./assets/video/PricePage/lipo2.mp4";
 
+import lipo1 from "./assets/Slider/lipo1.png";
+import lipo21 from "./assets/Slider/lipo2.png";
+
+
 import peeling from "./assets/video/PricePage/peeling.mp4";
 import peeling2 from "./assets/video/PricePage/peeling2.mp4";
+
+import pilingi1 from "./assets/Slider/pilingi1.png";
+import pilingi2 from "./assets/Slider/pilingi2.png";
+
 
 import kapel from "./assets/video/PricePage/kapel.mp4";
 import kapel2 from "./assets/video/PricePage/kapel2.mp4";
 
+import kap1 from "./assets/Slider/kap1.png";
+import kap2 from "./assets/Slider/kap2.png";
+
+
 import threads from "./assets/video/PricePage/threads.mp4";
 import threads2 from "./assets/video/PricePage/threads2.mp4";
+
+import nitki1 from "./assets/Slider/nitki1.png";
+import nitki2 from "./assets/Slider/nitki2.png";
+
 
 import uhod from "./assets/video/PricePage/uhod.mp4";
 import uhod2 from "./assets/video/PricePage/uhod2.mp4";
 
-
+import chistka1 from "./assets/Slider/chistka1.png";
+import chistka2 from "./assets/Slider/chistka2.png";
 
 
 
@@ -117,6 +161,12 @@ export default function PriceListBotuno() {
                             description: "Спустя 3–5 дней мимика становится мягче, морщины разглаживаются, и лицо сохраняет естественное выражение."
                         },
                     ]}
+                gallery={[
+                {
+                    before: bot1,
+                    after: bot2
+                }
+            ]}
                     conclusion="Ботулинотерапия — это путь к обновлённому, расслабленному и уверенно спокойному лицу. Без боли, без долгого восстановления, но с реальными результатами. Запишитесь прямо сейчас!"
                 />
 
@@ -153,6 +203,12 @@ export default function PriceListBotuno() {
                             src: hypergidr2,
                             title: "Результат и эффект",
                             description: "Спустя 3–5 дней потливость существенно снижается, качество жизни пациента значительно улучшается."
+                        }
+                    ]}
+                    gallery={[
+                        {
+                            before: hyper1,
+                            after: hyper2
                         }
                     ]}
                     conclusion="Если вы устали бороться с потливостью — не откладывайте решение. Безопасная и эффективная процедура ботулинотерапии от гипергидроза поможет вернуть комфорт и уверенность."
@@ -259,6 +315,12 @@ export default function PriceListBotuno() {
                             description: "Сразу после процедуры можно увидеть выравнивание черт лица, улучшение объема и форм. Эффект натуральный и не нарушает мимику."
                         },
                     ]}
+                    gallery={[
+                        {
+                            before: cont1,
+                            after: cont2
+                        }
+                    ]}
                     conclusion="Контурная пластика — это способ подчеркнуть индивидуальность и достичь гармонии во внешности без операции. Пройдите консультацию, чтобы подобрать идеальный препарат и зону коррекции."
                 />
 
@@ -305,6 +367,12 @@ export default function PriceListBotuno() {
                             description: "Процедура безболезненна и расслабляющая. Подходит для подтяжки кожи, уменьшения пор и тонуса лица без реабилитации."
                         },
                     ]}
+                    gallery={[
+                        {
+                            before: aparatnaya1,
+                            after: aparatnaya2
+                        }
+                    ]}
                     conclusion="Аппаратные методики позволяют добиться выраженного лифтинг-эффекта и улучшения качества кожи без хирургического вмешательства. Идеальны для тех, кто ценит результат и комфорт."
                 />
 
@@ -345,6 +413,12 @@ export default function PriceListBotuno() {
                             src: exo2,
                             title: "Эффект до и после",
                             description: "Через 7–10 дней после процедуры кожа становится более гладкой, светлой и сияющей. Уменьшаются воспаления, сосудистая сетка и постакне."
+                        }
+                    ]}
+                    gallery={[
+                        {
+                            before: ekzos1,
+                            after: ekzos2
                         }
                     ]}
                     conclusion="Экзосомальная терапия — это прорыв в омоложении. Если вы ищете мягкий, но глубокий способ вернуть коже здоровье, сияние и молодость, эта процедура идеально подойдёт. Рекомендуется курсом 3–5 процедур для стойкого эффекта."
@@ -414,6 +488,12 @@ export default function PriceListBotuno() {
                             description: "Кожа становится плотнее, исчезает сетка морщин, лицо выглядит моложе. Процедура комфортна и не требует реабилитации."
                         },
                     ]}
+                    gallery={[
+                        {
+                            before: kolog1,
+                            after: kolog2
+                        }
+                    ]}
                     conclusion="Коллагенотерапия — это ключ к молодости и упругости кожи. Подходит для любого возраста и эффективно решает проблемы дряблости, тусклости и возрастных изменений. Выбирайте препарат с врачом — и наслаждайтесь обновлённым отражением."
                 />
 
@@ -458,6 +538,12 @@ export default function PriceListBotuno() {
                             title: "Результаты после курса",
                             description: "Через 2–3 процедуры заметно уменьшается объём, контур становится чётче, кожа подтягивается. Максимальный эффект достигается при курсовом подходе."
                         },
+                    ]}
+                    gallery={[
+                        {
+                            before: lipo1,
+                            after: lipo21
+                        }
                     ]}
                     conclusion="Липолитики — это альтернатива липосакции без хирургического вмешательства. Подходят для работы с лицом и телом, не требуют реабилитации, дают быстрый и заметный результат. Пройдите курс и преобразите свою форму безопасно и эффективно."
                 />
@@ -523,6 +609,12 @@ export default function PriceListBotuno() {
                             description: "Кожа становится светлее, чище, ровнее. Исчезают воспаления, выравнивается тон, улучшается текстура кожи."
                         },
                     ]}
+                    gallery={[
+                        {
+                            before: pilingi1,
+                            after: pilingi2
+                        }
+                    ]}
                     conclusion="Пилинги — это эффективное решение для тех, кто хочет быстро улучшить качество кожи, справиться с проблемами и вернуть ей ухоженный и здоровый вид. Подбор типа пилинга осуществляется индивидуально после консультации."
                 />
 
@@ -575,6 +667,12 @@ export default function PriceListBotuno() {
                             title: "После процедуры",
                             description: "Уже через 1–2 часа ощущается прилив сил, лёгкость в теле и улучшение концентрации. Рекомендуется пройти курс для стойкого результата."
                         },
+                    ]}
+                    gallery={[
+                        {
+                            before: kap1,
+                            after: kap2
+                        }
                     ]}
                     conclusion="Капельницы — это быстрый способ вернуть организму энергию, здоровье и баланс. Подберите свой состав вместе с врачом и почувствуйте результат уже после первой процедуры."
                 />
@@ -643,6 +741,12 @@ export default function PriceListBotuno() {
                             title: "Результаты лифтинга",
                             description: "Сразу виден эффект подтяжки, который усиливается по мере образования коллагенового каркаса. Кожа становится плотной и упругой."
                         },
+                    ]}
+                    gallery={[
+                        {
+                            before: nitki1,
+                            after: nitki2
+                        }
                     ]}
                     conclusion="Нитевой лифтинг — это отличная альтернатива хирургической подтяжке. Процедура быстро возвращает лицу молодость и чёткие контуры без длительного восстановления."
                 />
@@ -718,6 +822,12 @@ export default function PriceListBotuno() {
                             title: "Результат после процедуры",
                             description: "Кожа выглядит более свежей, ровной и сияющей. Эффект усиливается в течение нескольких дней после процедуры."
                         },
+                    ]}
+                    gallery={[
+                        {
+                            before: chistka1,
+                            after: chistka2
+                        }
                     ]}
                     conclusion="Регулярный уход и чистка лица — залог здоровой кожи. Эти процедуры не только улучшают её внешний вид, но и повышают эффективность других эстетических вмешательств. Позаботьтесь о себе уже сегодня!"
                 />

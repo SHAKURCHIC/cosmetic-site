@@ -30,6 +30,24 @@ import tysklo1 from  "./assets/problems/tysklo1.jpg"
 import tysklo2 from  "./assets/problems/tysklo2.jpg"
 import tysklo3 from  "./assets/problems/tysklo3.jpg"
 
+import intime1 from  "./assets/problems/intime1.jpg"
+import intime2 from  "./assets/problems/intime2.jpg"
+import intime3 from  "./assets/problems/intime3.jpg"
+
+import syhodisc1 from  "./assets/problems/syhodisc1.jpg"
+import syhodisc2 from  "./assets/problems/syhodisc2.jpg"
+import syhodisc3 from  "./assets/problems/syhodisc3.jpg"
+
+import rodi1 from  "./assets/problems/rodi1.jpg"
+import rodi2 from  "./assets/problems/rodi2.jpg"
+import rodi3 from  "./assets/problems/rodi3.jpg"
+
+
+
+
+
+
+
 export const problemsInfo = {
     wrinkles: {
         title: "Морщины",
@@ -102,5 +120,33 @@ export const problemsInfo = {
             "Для восстановления применяются капельницы с нутриентами, витаминные инъекции, маски, массажи и укрепляющие процедуры."
         ],
         images: [tysklo1, tysklo2, tysklo3]
+    },
+    intimate_rejuvenation: {
+        title: "Интимное омоложение",
+        descriptions: [
+            "Интимное омоложение — это комплекс процедур, направленных на восстановление эластичности, увлажненности и общего тонуса интимной зоны.",
+            "С возрастом, после родов или на фоне гормональных изменений кожа и слизистая могут терять упругость, вызывать дискомфорт и снижать качество жизни.",
+            "Для решения применяются экзосомальная терапия, коллагеностимуляторы и нитевые методики, обеспечивающие деликатное и эффективное восстановление."
+        ],
+        images: [intime1, intime2, intime3]
+    },
+    dryness_discomfort: {
+        title: "Сухость и дискомфорт",
+        descriptions: [
+            "Сухость интимной зоны может возникать при менопаузе, стрессах, снижении уровня эстрогенов или после медицинских вмешательств.",
+            "Она сопровождается ощущением стянутости, зудом и болью, особенно при физической активности или интимной близости.",
+            "Эффективное решение — это терапия экзосомами и коллагеном, направленная на увлажнение тканей и восстановление барьерных функций."
+        ],
+        images: [syhodisc1, syhodisc2, syhodisc3]
+    },
+    recovery_after_childbirth: {
+        title: "Восстановление после родов",
+        descriptions: [
+            "После родов многие женщины сталкиваются с ослаблением мышц тазового дна, сухостью, микротрещинами и снижением чувствительности.",
+            "Грамотное восстановление помогает избежать дальнейших проблем и возвращает комфорт и уверенность.",
+            "Используются экзосомальные препараты, инъекции коллагена и внутривенные капельницы с питательными веществами для регенерации."
+        ],
+        images: [rodi1, rodi2, rodi3]
     }
+
 };

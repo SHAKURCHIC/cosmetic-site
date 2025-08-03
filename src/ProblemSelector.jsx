@@ -49,12 +49,31 @@ const problemsData = {
             services: ["ivdrips", "collagen"]
         }
     ],
+    gynecology: [
+        {
+            id: "intimate_rejuvenation",
+            title: "Интимное омоложение",
+            services: ["exosomes", "collagen", "threads"]
+        },
+        {
+            id: "dryness_discomfort",
+            title: "Сухость и дискомфорт",
+            services: ["exosomes", "collagen"]
+        },
+        {
+            id: "recovery_after_childbirth",
+            title: "Восстановление после родов",
+            services: ["exosomes", "collagen", "ivdrips"]
+        }
+    ],
 };
 
 const categories = [
     { key: "face", label: "Лицо" },
     { key: "body", label: "Тело" },
     { key: "hair", label: "Волосы" },
+    { key: "gynecology", label: "Гинекология" },
+
 ];
 
 const ProblemSelector = ({ onProblemSelect }) => {

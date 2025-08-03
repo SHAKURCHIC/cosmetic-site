@@ -1,6 +1,4 @@
-// --- ProcedureBlock.js (обновлённый) ---
-
-import React from "react";
+import React, { useState, useRef } from "react";
 
 export default function ProcedureBlock({
                                            id,
@@ -88,17 +86,11 @@ export default function ProcedureBlock({
                 </div>
             )}
 
-            {/* Галерея */}
-            {gallery.length > 0 && (
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {gallery.map((img, i) => (
-                        <img
-                            key={i}
-                            src={img}
-                            alt={`gallery-${i}`}
-                            className="rounded-xl object-cover w-full shadow"
-                        />
-                    ))}
+            {/* Галерея до/после */}
+            {gallery.length === 1 && gallery[0].before && gallery[0].after && (
+                <div>
+                    <h3 className="text-xl font-semibold text-[#B69E7B] mb-4">Результат процедуры</h3>
+                    <BeforeAfterSlider before={gallery[0].before} after={gallery[0].after} />
                 </div>
             )}
 
@@ -109,5 +101,69 @@ export default function ProcedureBlock({
                 </div>
             )}
         </section>
+    );
+}
+
+// ⬅️ Добавляем before/after слайдер
+function BeforeAfterSlider({ before, after }) {
+    const [sliderPos, setSliderPos] = useState(50);
+    const containerRef = useRef(null);
+
+    const handleMove = (e) => {
+        const bounds = containerRef.current.getBoundingClientRect();
+        const pos = ((e.clientX - bounds.left) / bounds.width) * 100;
+        setSliderPos(Math.max(0, Math.min(100, pos)));
+    };
+
+    const handleTouchMove = (e) => {
+        if (!e.touches.length) return;
+        const bounds = containerRef.current.getBoundingClientRect();
+        const pos = ((e.touches[0].clientX - bounds.left) / bounds.width) * 100;
+        setSliderPos(Math.max(0, Math.min(100, pos)));
+    };
+
+    // Градиентная маска (переводим % в px внутри CSS)
+    const maskStyle = {
+        WebkitMaskImage: `linear-gradient(to right, transparent ${sliderPos - 5}%, black ${sliderPos}%)`,
+        maskImage: `linear-gradient(to right, transparent ${sliderPos - 5}%, black ${sliderPos}%)`,
+        WebkitMaskSize: '100% 100%',
+        maskSize: '100% 100%',
+        WebkitMaskRepeat: 'no-repeat',
+        maskRepeat: 'no-repeat',
+    };
+
+    return (
+        <div
+            ref={containerRef}
+            onMouseMove={(e) => e.buttons === 1 && handleMove(e)}
+            onTouchMove={handleTouchMove}
+            className="relative w-full aspect-video overflow-hidden rounded-xl shadow-xl cursor-ew-resize select-none"
+        >
+            {/* BEFORE подложка */}
+            <img
+                src={before}
+                alt="до"
+                className="absolute inset-0 w-full h-full object-cover z-0"
+            />
+
+            {/* AFTER с градиентной маской */}
+            <img
+                src={after}
+                alt="после"
+                className="absolute inset-0 w-full h-full object-cover z-10"
+                style={maskStyle}
+            />
+
+            {/* Ползунок */}
+            <div
+                className="absolute top-0 bottom-0 z-20"
+                style={{ left: `${sliderPos}%` }}
+            >
+                <div className="w-1 h-full bg-white opacity-90" />
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 text-xs bg-white text-[#B69E7B] px-2 py-1 rounded shadow">
+                    ⬌
+                </div>
+            </div>
+        </div>
     );
 }
