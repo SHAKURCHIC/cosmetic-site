@@ -10,6 +10,13 @@ import CallToActionSoft from "./CallToActionSoft.jsx";
 import WhyUsSection from "./WhyUsSection.jsx";
 import ProblemSelector from "./ProblemSelector.jsx";
 
+import TeamBlock from "./TeamBlock";
+
+import staff1 from "./assets/Staff/img.png"
+import staff2 from "./assets/Staff/img_1.png"
+import staff3 from "./assets/Staff/img_2.png"
+
+
 export default function HomeSection({ onServiceClick , onProblemSelect}) {
     return (
         <div className="w-full bg-[#F8F5F2]">
@@ -94,6 +101,36 @@ export default function HomeSection({ onServiceClick , onProblemSelect}) {
 
             {/* Call to Action */}
             <CallToActionSoft />
+
+            <TeamBlock
+                team={[
+                    {
+                        firstName: "Асель",
+                        lastName: "Салимова",
+                        middleName: "Канатовна",
+                        experience: 7,
+                        specialty: "Косметолог-эстетист",
+                        photo: staff1
+                    },
+                    {
+                        firstName: "Айгерим",
+                        lastName: "Турганбаева",
+                        middleName: "Эркиновна",
+                        experience: 5,
+                        specialty: "Дерматолог",
+                        photo: staff2
+                    },
+                    {
+                        firstName: "Назира",
+                        lastName: "Жолдошова",
+                        middleName: "Бакытовна",
+                        experience: 4,
+                        specialty: "Медицинская сестра",
+                        photo: staff3
+                    }
+                ]}
+            />
+
         </div>
     );
 }
