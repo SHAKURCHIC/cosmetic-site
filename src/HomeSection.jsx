@@ -15,6 +15,9 @@ import TeamBlock from "./TeamBlock";
 import staff1 from "./assets/Staff/img.png"
 import staff2 from "./assets/Staff/img_1.png"
 import staff3 from "./assets/Staff/img_2.png"
+import staf_Altynay from "./assets/Staff/staf_Altynay.jpeg"
+import staf_Zylfia from "./assets/Staff/staf_Zylfia.jpeg"
+
 
 
 export default function HomeSection({ onServiceClick , onProblemSelect}) {
@@ -105,28 +108,60 @@ export default function HomeSection({ onServiceClick , onProblemSelect}) {
             <TeamBlock
                 team={[
                     {
-                        firstName: "Асель",
-                        lastName: "Салимова",
-                        middleName: "Канатовна",
-                        experience: 7,
-                        specialty: "Косметолог-эстетист",
+                        firstName: "Наталья",
+                        lastName: "",
+                        middleName: "",
+                        experience: 13,
+                        specialty: "Врач-косметолог. Специализация: подбор домашнего ухода. Опыт работы с брендами Magiray, GIGI, Renew, Christina, Mary Cohr, Dr. Grendel, Sesderma. Проходит обучение на тренера GIGI.",
                         photo: staff1
+
                     },
                     {
-                        firstName: "Айгерим",
-                        lastName: "Турганбаева",
-                        middleName: "Эркиновна",
+                        firstName: "Алтынай",
+                        lastName: "Максатбекова",
+                        middleName: "Максатбековна",
                         experience: 5,
-                        specialty: "Дерматолог",
-                        photo: staff2
+                        specialty: "Врач-дерматокосметолог. Окончила КГМА (лечебное дело), ординатура по дерматовенерологии. Специализация: мезотерапия, ботулинотерапия, контурная пластика губ, аппаратная косметология. Постоянно повышает квалификацию.",
+                        photo: staf_Altynay
+
                     },
                     {
-                        firstName: "Назира",
-                        lastName: "Жолдошова",
-                        middleName: "Бакытовна",
-                        experience: 4,
-                        specialty: "Медицинская сестра",
+                        firstName: "Зульфия",
+                        lastName: "Курсаева",
+                        middleName: "Мидхатовна",
+                        experience: 12,
+                        specialty: "Главный врач, дерматолог-косметолог. Опыт в эстетической и инъекционной медицине более 12 лет. Специализация: ботулинотерапия, контурная пластика, нитевые технологии, мезотерапия, лазерные методики, профессиональные пилинги. Сертифицированный тренер.",
+                        photo: staf_Zylfia
+
+                    },
+                    {
+                        firstName: "Эрик",
+                        lastName: "Омарбеков",
+                        middleName: "Анатольевич",
+                        experience: 5,
+                        specialty: "Врач-косметолог. Специализация: инъекционная и аппаратная косметология, естественное омоложение, авторские методики. Более 5 лет практики.",
+                        photo: staff1
+
+                    },
+                    {
+                        firstName: "Гулшаир",
+                        lastName: "Пазылова",
+                        middleName: "Сулаймановна",
+                        experience: 5,
+                        specialty: "Врач-дерматолог, косметолог. Медицинское образование (КГМА). Стаж 5 лет. Основной подход — безопасность, анатомическая грамотность и забота о естественной красоте.",
+                        photo: staff2
+
+
+                    },
+                    {
+                        firstName: "Сезим",
+                        lastName: "Калмурзаева",
+                        middleName: "Зарылбековна",
+                        experience: 5,
+                        specialty: "Врач-гинеколог, гинеколог-эстетист. Окончила КГМА и ординатуру по акушерству и гинекологии. Повышение квалификации по эстетической гинекологии: интимная контурная пластика, аппаратное омоложение, мезотерапия, PRP-терапия, пилинги. Дополнительно диплом по перинатальной психологии.",
                         photo: staff3
+
+
                     }
                 ]}
             />
